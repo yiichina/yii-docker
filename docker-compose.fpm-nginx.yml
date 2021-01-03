@@ -5,7 +5,8 @@ services:
     environment:
       - FASTCGI_PASS_HOST=php
     ports:
-      - '8100:80'
+      - '80:80'
     volumes:
       # Application testing
       - ./_host-volumes/app/public:/app/public:delegated
+      - ./_host-volumes/etc/nginx/conf.d:/etc/nginx/conf.d:delegated
